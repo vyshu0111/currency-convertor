@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <form action="/convert" method="post">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <label for="fromCurrency">From:</label>
+            <input type="text" id="fromCurrency" name="fromCurrency" required>
+            
+            <label for="toCurrency">To:</label>
+            <input type="text" id="toCurrency" name="toCurrency" required>
+            
+            <button type="submit">Convert</button>
+        </form>
+        
+        <% if (convertedAmount) { %>
+            <div class="result">
+                <h2>Converted Amount: <%= convertedAmount %></h2>
+            </div>
+        <% } %>
+        
+        <% if (error) { %>
+            <div class="error">
+                <h2><%= error %></h2>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
